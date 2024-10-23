@@ -60,8 +60,7 @@ public class Dijkstra {
             node = findLowestCostNode(costs);
         }
 
-        System.out.println("Costs: " + costs);
-        System.out.println("Parents: " + parents);
+        System.out.println("Path: " + getPath());
     }
 
     private static String findLowestCostNode(Map<String, Integer> costs) {
@@ -78,5 +77,17 @@ public class Dijkstra {
         }
 
         return lowestCostNode;
+    }
+
+    private static String getPath() {
+        StringBuilder path = new StringBuilder("end");
+        String parent = parents.get("end");
+
+        while (parent != null) {
+            path.insert(0, parent + " -> ");
+            parent = parents.get(parent);
+        }
+
+        return path.toString();
     }
 }
