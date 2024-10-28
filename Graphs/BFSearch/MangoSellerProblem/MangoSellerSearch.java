@@ -1,4 +1,4 @@
-package Graphs.BFSearch;
+package Graphs.BFSearch.MangoSellerProblem;
 
 import java.util.*;
 
